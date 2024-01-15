@@ -3,9 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarProject.Data", "CarProject.Data\CarProject.Data.csproj", "{812FF277-BF29-412B-B98B-A5FC28EA52A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarProject.Data", "CarProject.Data\CarProject.Data.csproj", "{812FF277-BF29-412B-B98B-A5FC28EA52A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarProject.Data.Shared", "CarProject.Data.Shared\CarProject.Data.Shared.csproj", "{82FAD6F1-E8DB-4614-BE46-F9E51968CA8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarProject.Data.Shared", "CarProject.Data.Shared\CarProject.Data.Shared.csproj", "{82FAD6F1-E8DB-4614-BE46-F9E51968CA8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarShopAPI", "CarShopAPI\CarShopAPI.csproj", "{877A88F3-5F7D-4A15-B755-623C018AB6C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarShop.API.Extensions", "CarShop.API.Extensions\CarShop.API.Extensions.csproj", "{8267E4B4-4563-451C-82AD-ACD7118C7491}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarShop.API.DTO", "CarShop.API.DTO\CarShop.API.DTO.csproj", "{72FE808A-86EF-4B10-AD73-71A41BEDD31C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarShop.API.Category", "CarShop.API.Category\CarShop.API.Category.csproj", "{1BFA8542-4B88-44B5-8E78-55F42E10E4AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +29,22 @@ Global
 		{82FAD6F1-E8DB-4614-BE46-F9E51968CA8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82FAD6F1-E8DB-4614-BE46-F9E51968CA8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82FAD6F1-E8DB-4614-BE46-F9E51968CA8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{877A88F3-5F7D-4A15-B755-623C018AB6C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{877A88F3-5F7D-4A15-B755-623C018AB6C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{877A88F3-5F7D-4A15-B755-623C018AB6C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{877A88F3-5F7D-4A15-B755-623C018AB6C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8267E4B4-4563-451C-82AD-ACD7118C7491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8267E4B4-4563-451C-82AD-ACD7118C7491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8267E4B4-4563-451C-82AD-ACD7118C7491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8267E4B4-4563-451C-82AD-ACD7118C7491}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72FE808A-86EF-4B10-AD73-71A41BEDD31C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72FE808A-86EF-4B10-AD73-71A41BEDD31C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72FE808A-86EF-4B10-AD73-71A41BEDD31C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72FE808A-86EF-4B10-AD73-71A41BEDD31C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BFA8542-4B88-44B5-8E78-55F42E10E4AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BFA8542-4B88-44B5-8E78-55F42E10E4AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BFA8542-4B88-44B5-8E78-55F42E10E4AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BFA8542-4B88-44B5-8E78-55F42E10E4AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
