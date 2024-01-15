@@ -1,7 +1,2 @@
-﻿namespace CarShop.API.Category
-{
-    public class Usings
-    {
-    }
-
-}
+﻿global using CarProject.Data.Contexts;
+global using Microsoft.EntityFrameworkCore;

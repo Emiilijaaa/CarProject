@@ -1,7 +1,14 @@
-﻿namespace CarProject.Data.Entities;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class CarCategory
+namespace CarProject.Data.Entites
 {
-    public int CarId { get; set; }
-    public int CategoryId { get; set; }
+    public class CarCategory
+    {
+        public int CarId { get; set; }
+        public int CategoryId { get; set; }
+    }
 }

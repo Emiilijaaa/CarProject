@@ -1,5 +1,7 @@
 ﻿using CarProject.Data.Shared.Interfaces;
 namespace CarShop.API.Extensions.Extensions;
+
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore.Internal;
 
@@ -12,7 +14,8 @@ public static class HttpExtensions
         app.MapGet($"/api/{node}s", HttpGetAsync<TEntity, TGetDto>);
     }
 
-    public static async Task<IResult> HttpGetAsync<TEntity, TDto>(this IDbService db)
+    public static async Task<IResult> HttpGetAsync<TEntity, TDto>()
         where TEntity : class where TDto : class => 
         Results.Ok();
 }
+
