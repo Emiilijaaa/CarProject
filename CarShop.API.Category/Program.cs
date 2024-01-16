@@ -1,4 +1,6 @@
 using CarProject.Data.Contexts;
+using CarProject.Data.Entities;
+using CarShop.API.Extensions.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,7 +24,13 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+RegisterEndpoints();
+ app.Run();
 
 
 app.Run();
 
+void RegisterEndpoints()
+{
+    app.AddEndpoint<Category, CategoryGetDTO, CategoryPutDTO, CategoryGetDTO>();
+}
