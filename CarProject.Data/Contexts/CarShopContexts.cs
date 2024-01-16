@@ -40,16 +40,16 @@ public class CarShopContext(DbContextOptions<CarShopContext> options) : DbContex
 
             .HasKey(cc => new { cc.CarId, cc.CategoryId });
 
-       
+
         // Many-to-Many Relationships
 
         builder.Entity<Car>()
 
             .HasOne(c => c.Brand)
 
-            .WithMany(b => b.Cars)
+            .WithMany(b => b.Cars);
 
-            .UsingEntity<CarBrand>();
+            
 
         builder.Entity<Car>()
 
@@ -71,9 +71,9 @@ public class CarShopContext(DbContextOptions<CarShopContext> options) : DbContex
 
             .HasOne(c => c.VehicleType)
 
-            .WithMany(vt => vt.Cars)
+            .WithMany(vt => vt.Cars);
 
-            .UsingEntity<VehicleType>();
+            
 
         // CategoryFilter Many-to-Many Relationship
 

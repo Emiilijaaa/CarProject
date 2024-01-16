@@ -14,5 +14,6 @@ public class Car : IEntity
 
 
     public List<Category>? Categories { get; set; }
+
     public List<Color>? Colors { get; set; }
 }

@@ -17,39 +17,11 @@ namespace CarProject.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    OptionType = table.Column<int>(type: "int", nullable: false),
-                    BrandId = table.Column<int>(type: "int", nullable: true)
+                    OptionType = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Brands", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Brands_Brands_BrandId",
-                        column: x => x.BrandId,
-                        principalTable: "Brands",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Cars",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Brand = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Year = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    BrandId = table.Column<int>(type: "int", nullable: false),
-                    CarId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Cars", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Cars_Cars_CarId",
-                        column: x => x.CarId,
-                        principalTable: "Cars",
-                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -101,89 +73,11 @@ namespace CarProject.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     VehicleId = table.Column<int>(type: "int", nullable: false),
-                    OptionType = table.Column<int>(type: "int", nullable: false),
-                    VehicleTypeId = table.Column<int>(type: "int", nullable: true)
+                    OptionType = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_VehicleTypes", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_VehicleTypes_VehicleTypes_VehicleTypeId",
-                        column: x => x.VehicleTypeId,
-                        principalTable: "VehicleTypes",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CarBrands",
-                columns: table => new
-                {
-                    CarId = table.Column<int>(type: "int", nullable: false),
-                    BrandId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CarBrands", x => new { x.CarId, x.BrandId });
-                    table.ForeignKey(
-                        name: "FK_CarBrands_Brands_BrandId",
-                        column: x => x.BrandId,
-                        principalTable: "Brands",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CarBrands_Cars_CarId",
-                        column: x => x.CarId,
-                        principalTable: "Cars",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CarCategories",
-                columns: table => new
-                {
-                    CarId = table.Column<int>(type: "int", nullable: false),
-                    CategoryId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CarCategories", x => new { x.CarId, x.CategoryId });
-                    table.ForeignKey(
-                        name: "FK_CarCategories_Cars_CarId",
-                        column: x => x.CarId,
-                        principalTable: "Cars",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CarCategories_Categories_CategoryId",
-                        column: x => x.CategoryId,
-                        principalTable: "Categories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CarColors",
-                columns: table => new
-                {
-                    CarId = table.Column<int>(type: "int", nullable: false),
-                    ColorId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CarColors", x => new { x.CarId, x.ColorId });
-                    table.ForeignKey(
-                        name: "FK_CarColors_Cars_CarId",
-                        column: x => x.CarId,
-                        principalTable: "Cars",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CarColors_Colors_ColorId",
-                        column: x => x.ColorId,
-                        principalTable: "Colors",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -211,105 +105,136 @@ namespace CarProject.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CarVehicleTypes",
+                name: "Cars",
                 columns: table => new
                 {
-                    CarId = table.Column<int>(type: "int", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Year = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<double>(type: "float", nullable: false),
+                    BrandId = table.Column<int>(type: "int", nullable: false),
                     VehicleTypeId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CarVehicleTypes", x => new { x.CarId, x.VehicleTypeId });
+                    table.PrimaryKey("PK_Cars", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_CarVehicleTypes_Cars_CarId",
-                        column: x => x.CarId,
-                        principalTable: "Cars",
+                        name: "FK_Cars_Brands_BrandId",
+                        column: x => x.BrandId,
+                        principalTable: "Brands",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_CarVehicleTypes_VehicleTypes_VehicleTypeId",
+                        name: "FK_Cars_VehicleTypes_VehicleTypeId",
                         column: x => x.VehicleTypeId,
                         principalTable: "VehicleTypes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Brands_BrandId",
-                table: "Brands",
-                column: "BrandId");
+            migrationBuilder.CreateTable(
+                name: "CarCategory",
+                columns: table => new
+                {
+                    CarId = table.Column<int>(type: "int", nullable: false),
+                    CategoryId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CarCategory", x => new { x.CarId, x.CategoryId });
+                    table.ForeignKey(
+                        name: "FK_CarCategory_Cars_CarId",
+                        column: x => x.CarId,
+                        principalTable: "Cars",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CarCategory_Categories_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "Categories",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CarColor",
+                columns: table => new
+                {
+                    CarId = table.Column<int>(type: "int", nullable: false),
+                    ColorId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CarColor", x => new { x.CarId, x.ColorId });
+                    table.ForeignKey(
+                        name: "FK_CarColor_Cars_CarId",
+                        column: x => x.CarId,
+                        principalTable: "Cars",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CarColor_Colors_ColorId",
+                        column: x => x.ColorId,
+                        principalTable: "Colors",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
 
             migrationBuilder.CreateIndex(
-                name: "IX_CarBrands_BrandId",
-                table: "CarBrands",
-                column: "BrandId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CarCategories_CategoryId",
-                table: "CarCategories",
+                name: "IX_CarCategory_CategoryId",
+                table: "CarCategory",
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CarColors_ColorId",
-                table: "CarColors",
+                name: "IX_CarColor_ColorId",
+                table: "CarColor",
                 column: "ColorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Cars_CarId",
+                name: "IX_Cars_BrandId",
                 table: "Cars",
-                column: "CarId");
+                column: "BrandId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CarVehicleTypes_VehicleTypeId",
-                table: "CarVehicleTypes",
+                name: "IX_Cars_VehicleTypeId",
+                table: "Cars",
                 column: "VehicleTypeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CategoryFilters_FilterId",
                 table: "CategoryFilters",
                 column: "FilterId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_VehicleTypes_VehicleTypeId",
-                table: "VehicleTypes",
-                column: "VehicleTypeId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CarBrands");
+                name: "CarCategory");
 
             migrationBuilder.DropTable(
-                name: "CarCategories");
-
-            migrationBuilder.DropTable(
-                name: "CarColors");
-
-            migrationBuilder.DropTable(
-                name: "CarVehicleTypes");
+                name: "CarColor");
 
             migrationBuilder.DropTable(
                 name: "CategoryFilters");
 
             migrationBuilder.DropTable(
-                name: "Brands");
-
-            migrationBuilder.DropTable(
-                name: "Colors");
-
-            migrationBuilder.DropTable(
                 name: "Cars");
 
             migrationBuilder.DropTable(
-                name: "VehicleTypes");
+                name: "Colors");
 
             migrationBuilder.DropTable(
                 name: "Categories");
 
             migrationBuilder.DropTable(
                 name: "Filters");
+
+            migrationBuilder.DropTable(
+                name: "Brands");
+
+            migrationBuilder.DropTable(
+                name: "VehicleTypes");
         }
     }
 }
