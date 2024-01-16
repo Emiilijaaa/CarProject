@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarProject.Data.Entites
+namespace CarProject.Data.Entites;
+
+public class CarCategory
 {
-    public class CarCategory
-    {
-        public int CarId { get; set; }
-        public int CategoryId { get; set; }
-    }
+    public int CarId { get; set; }
+    public int CategoryId { get; set; }
 }
