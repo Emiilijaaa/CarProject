@@ -1,6 +1,7 @@
 using AutoMapper;
 using CarProject.Data.Contexts;
 using CarProject.Data.Entities;
+using CarProject.Data.Services;
 using CarShop.API.Extensions.Extensions;
 using Microsoft.EntityFrameworkCore;
 

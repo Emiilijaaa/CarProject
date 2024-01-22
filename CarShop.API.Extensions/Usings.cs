@@ -1,13 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CarProject.Data.Shared.Interfaces;
-
-namespace CarShop.API.Extensions
-{
-    internal class Usings
-    {
-    }
-}
+﻿global using CarProject.Data.Shared.Interfaces;
+global using Microsoft.AspNetCore.Http;
+global using Microsoft.AspNetCore.Builder;
