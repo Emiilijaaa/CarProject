@@ -75,3 +75,4 @@ void ConfigureAutoMapper()
     var mapper = config.CreateMapper();
     builder.Services.AddSingleton(mapper);
 }
+

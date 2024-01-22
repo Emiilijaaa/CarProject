@@ -1,6 +1,4 @@
-﻿using AutoMapper;
-using CarProject.Data.Contexts;
-
+﻿
 namespace CarProject.Data.Services;
 
 public class DbService : IDbService

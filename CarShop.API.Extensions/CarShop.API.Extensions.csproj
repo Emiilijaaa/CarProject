@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CarProject.Data.Shared\CarProject.Data.Shared.csproj" />
+    <ProjectReference Include="..\CarProject.Data\CarProject.Data.csproj" />
   </ItemGroup>
 
 </Project>
