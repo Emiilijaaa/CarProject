@@ -1,3 +1,4 @@
+using AutoMapper;
 using CarProject.Data.Contexts;
 using CarProject.Data.Entities;
 using CarShop.API.Extensions.Extensions;
@@ -13,6 +14,21 @@ builder.Services.AddDbContext<CarShopContext>(
     options =>
         options.UseSqlServer(
             builder.Configuration.GetConnectionString("CarShopConnection")));
+
+/**********
+ ** CORS Cross-Origin Resource Sharing**
+ **********/
+builder.Services.AddCors(policy =>
+{
+    policy.AddPolicy("CorsAllAccessPolicy", opt =>
+        opt.AllowAnyOrigin()
+           .AllowAnyHeader()
+           .AllowAnyMethod()
+    );
+});
+
+RegisterServices();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -25,12 +41,36 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 RegisterEndpoints();
- app.Run();
-
+/************************
+ ** CORS Configuration **
+ ************************/
+app.UseCors("CorsAllAccessPolicy");
 
 app.Run();
 
 void RegisterEndpoints()
 {
     app.AddEndpoint<Category, CategoryGetDTO, CategoryPutDTO, CategoryGetDTO>();
+}
+
+void RegisterServices()
+{
+    ConfigureAutoMapper();
+    builder.Services.AddScoped<IDbService, CategoryDbService>();
+}
+
+void ConfigureAutoMapper()
+{
+    var config = new MapperConfiguration(cfg =>
+    {
+        cfg.CreateMap<Category, CategoryPostDTO>().ReverseMap();
+        cfg.CreateMap<Category, CategoryPutDTO>().ReverseMap();
+        cfg.CreateMap<Category, CategoryGetDTO>().ReverseMap();
+        cfg.CreateMap<Category, CategorySmallGetDTO>().ReverseMap();
+        /*cfg.CreateMap<Filter, FilterGetDTO>().ReverseMap();
+        cfg.CreateMap<Size, OptionDTO>().ReverseMap();
+        cfg.CreateMap<Color, OptionDTO>().ReverseMap();*/
+    });
+    var mapper = config.CreateMapper();
+    builder.Services.AddSingleton(mapper);
 }

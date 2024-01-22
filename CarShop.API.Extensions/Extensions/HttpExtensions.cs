@@ -1,9 +1,10 @@
 ﻿using CarProject.Data.Shared.Interfaces;
-namespace CarShop.API.Extensions.Extensions;
-
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore.Internal;
+
+
+namespace CarShop.API.Extensions.Extensions;
 
 public static class HttpExtensions 
 {
