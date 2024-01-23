@@ -1,6 +1,6 @@
-﻿namespace CarProject.Data.Entites;
+﻿namespace CarShop.API.DTO;
 
-public class CarCategory
+internal class ProductCategoryDTO
 {
     public int CarId { get; set; }
     public int CategoryId { get; set; }
