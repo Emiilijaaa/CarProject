@@ -1,6 +1,4 @@
-﻿using CarProject.Data.Shared.Interfaces;
-
-namespace CarProject.Data.Entities;
+﻿namespace CarProject.Data.Entities;
 public class Brand : IEntity
 {
     public int Id { get; set; }
