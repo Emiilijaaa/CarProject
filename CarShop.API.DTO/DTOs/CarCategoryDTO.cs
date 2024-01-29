@@ -1,7 +1,7 @@
 ﻿
 namespace CarShop.API.DTO.DTOs;
 
-public class CarCartegoryDTO
+public class CarCategoryDTO
 {
     public int CarId { get; set; }
     public int CategoryId { get; set; }

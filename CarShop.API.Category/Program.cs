@@ -75,15 +75,6 @@ void ConfigureAutoMapper()
         cfg.CreateMap<Category, CategoryPutDTO>().ReverseMap();
         cfg.CreateMap<Category, CategoryGetDTO>().ReverseMap();
         cfg.CreateMap<Category, CategorySmallGetDTO>().ReverseMap();
-        cfg.CreateMap<Color, ColorPostDTO>().ReverseMap();
-        cfg.CreateMap<Color, ColorPutDTO>().ReverseMap();
-        cfg.CreateMap<Color, ColorGetDTO>().ReverseMap();
-        cfg.CreateMap<Brand, BrandPostDTO>().ReverseMap();
-        cfg.CreateMap<Brand, BrandPutDTO>().ReverseMap();
-        cfg.CreateMap<Brand, BrandGetDTO>().ReverseMap();
-        cfg.CreateMap<VehicleType, VehicleTypePostDTO>().ReverseMap();
-        cfg.CreateMap<VehicleType, VehicleTypePutDTO>().ReverseMap();
-        cfg.CreateMap<VehicleType, VehicleTypeGetDTO>().ReverseMap();
 
 
         /*cfg.CreateMap<Filter, FilterGetDTO>().ReverseMap();
