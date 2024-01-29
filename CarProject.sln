@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarShop.API.DTO", "CarShop.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarShop.API.Category", "CarShop.API.Category\CarShop.API.Category.csproj", "{1BFA8542-4B88-44B5-8E78-55F42E10E4AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarShop.API.Products", "CarShop.API.Products\CarShop.API.Products.csproj", "{539CE11E-5613-4FD2-B5F3-222846DD5577}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarShop.API.Products", "CarShop.API.Products\CarShop.API.Products.csproj", "{B5735B05-91A2-44A2-9408-23F326BBBBF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +47,10 @@ Global
 		{1BFA8542-4B88-44B5-8E78-55F42E10E4AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BFA8542-4B88-44B5-8E78-55F42E10E4AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BFA8542-4B88-44B5-8E78-55F42E10E4AE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{539CE11E-5613-4FD2-B5F3-222846DD5577}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{539CE11E-5613-4FD2-B5F3-222846DD5577}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{539CE11E-5613-4FD2-B5F3-222846DD5577}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{539CE11E-5613-4FD2-B5F3-222846DD5577}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5735B05-91A2-44A2-9408-23F326BBBBF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5735B05-91A2-44A2-9408-23F326BBBBF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5735B05-91A2-44A2-9408-23F326BBBBF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5735B05-91A2-44A2-9408-23F326BBBBF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
