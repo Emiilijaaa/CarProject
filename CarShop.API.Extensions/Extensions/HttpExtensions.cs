@@ -1,12 +1,4 @@
-﻿using CarProject.Data.Services;
-using CarProject.Data.Shared.Interfaces;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Internal;
-
-
-namespace CarShop.API.Extensions.Extensions;
+﻿namespace CarShop.API.Extensions.Extensions;
 
 public static class HttpExtensions 
 {

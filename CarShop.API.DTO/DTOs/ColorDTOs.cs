@@ -1,10 +1,8 @@
-﻿
-namespace CarShop.API.DTO.DTOs;
+﻿namespace CarShop.API.DTO.DTOs;
 
 public class ColorPostDTO
 {
     public string Name { get; set; } = string.Empty;
-
 }
 
 public class ColorPutDTO : BrandPostDTO

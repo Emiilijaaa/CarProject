@@ -1,5 +1,4 @@
-﻿
-namespace CarShop.API.DTO.DTOs;
+﻿namespace CarShop.API.DTO.DTOs;
 
 public class CarCategoryDTO
 {

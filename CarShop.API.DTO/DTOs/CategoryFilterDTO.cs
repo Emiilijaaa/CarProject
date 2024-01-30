@@ -1,5 +1,4 @@
-﻿using CarProject.API.DTO;
-
+﻿
 namespace CarShop.API.DTO;
 
 public class CategoryFilterPutDTO : CategoryPostDTO

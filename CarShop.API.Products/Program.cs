@@ -1,11 +1,3 @@
-using AutoMapper;
-using CarProject.Data.Contexts;
-using CarProject.Data.Entites;
-using CarProject.Data.Entities;
-using CarProject.Data.Services;
-using CarShop.API.DTO.DTOs;
-using CarShop.API.Extensions.Extensions;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -61,8 +53,6 @@ void RegisterEndpoints()
     app.AddEndpoint<CarColor, CarColorDTO>();
     app.AddEndpoint<CarCategory, CarCategoryDTO>();
 
-
-
 }
 
 void RegisterServices()
@@ -79,9 +69,6 @@ void ConfigureAutoMapper()
         cfg.CreateMap<Car, CarPutDTO>().ReverseMap();
         cfg.CreateMap<Car, CarGetDTO>().ReverseMap();
         cfg.CreateMap<Car, CarSmallGetDTO>().ReverseMap();
-        cfg.CreateMap<Color, ColorPostDTO>().ReverseMap();
-        cfg.CreateMap<Color, ColorPutDTO>().ReverseMap();
-        cfg.CreateMap<Color, ColorGetDTO>().ReverseMap();
         cfg.CreateMap<Color, ColorPostDTO>().ReverseMap();
         cfg.CreateMap<Color, ColorPutDTO>().ReverseMap();
         cfg.CreateMap<Color, ColorGetDTO>().ReverseMap();

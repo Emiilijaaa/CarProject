@@ -1,5 +1,4 @@
-﻿
-namespace CarProject.Data.Services;
+﻿namespace CarProject.Data.Services;
 
 public class CategoryDbService(CarShopContext db, IMapper mapper) : DbService(db, mapper)
 {

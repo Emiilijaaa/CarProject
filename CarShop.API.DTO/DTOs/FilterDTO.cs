@@ -1,7 +1,4 @@
 ﻿
-
-using CarShop.API.DTO;
-
 namespace CarProject.API.DTO;
 
 public class FilterPostDTO
