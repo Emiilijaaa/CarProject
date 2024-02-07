@@ -32,5 +32,19 @@ h1:focus {
     }
     
     .carousel.slide {
-        width: 50%;
+        width: 70%;
+        height: 500%;
     }
+
+/*.product-card {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.product-card-list:first-child {
+    margin-left: 0rem;
+}
+
+.product-card-list:last-child {
+    margin-right: 0rem;
+}*/
