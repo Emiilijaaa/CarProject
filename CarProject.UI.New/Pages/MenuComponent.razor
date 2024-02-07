@@ -1,34 +1,60 @@
 ﻿<nav class="navbar navbar-expand-lg bg-body-tertiary d-flex justify-content-center">
     <div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Modeller</a>
+                    @*<a class="nav-link active " aria-current="page" href="#">Modeller</a>@**@
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Modeller
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Alla modeller</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Sedan</a></li>
+                        <li><a class="dropdown-item" href="#">Coupe</a></li>
+                        <li><a class="dropdown-item" href="#">Familjebilar</a></li>
+                        <li><a class="dropdown-item" href="#">El & hybrid- bilar</a></li>
+                    </ul>
+                </li>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Tjänster</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Tjänster
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item bi bi-telephone-fill" href="#">Vägassistans vid olycka och haveri</a></li>
+                        <li><a class="dropdown-item bi bi-tools " href="#">Reservdelar och tillbehör</a></li>
+                        <li><a class="dropdown-item" href="#">Laddning och digitala tjänster</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item bi bi-envelope-fill" href="#">Hjälp med min nuvarande bil</a></li>
+                        <li><a class="dropdown-item bi bi-calendar-fill" href="#">Boka servicetid</a></li>
+
+                    </ul>
+                </li>                
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Köp online
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Leasing</a></li>
                         <li><a class="dropdown-item" href="#">Nya bilar i lager</a></li>
-                        <li><a class="dropdown-item" href="#">Begagnade bilar i lager</a></li>
+                        <li><a class="dropdown-item" href="#">Designa din bil</a></li>
+                        <li><a class="dropdown-item" href="#">Leasing</a></li>
                         <li><a class="dropdown-item" href="#">Finansiering</a></li>
                         
 
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Kontakta oss</a></li>
+                        <li><a class="dropdown-item bi bi-telephone-fill" href="#">Kontakta oss</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                </li>
+                
+               
+               
             </ul>
         </div>
     </div>
