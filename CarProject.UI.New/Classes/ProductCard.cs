@@ -1,4 +1,4 @@
-﻿namespace CarProject.UI.Classes;
+﻿namespace CarShop.UI.Classes;
 
 public class ProductCard
 {
