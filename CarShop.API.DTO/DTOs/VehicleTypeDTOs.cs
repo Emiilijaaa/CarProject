@@ -4,10 +4,11 @@ public class VehicleTypePostDTO
 {
     public string Name { get; set; }
 
+
     public OptionType OptionType { get; set; }
 }
 
-public class VehicleTypePutDTO : BrandPostDTO
+public class VehicleTypePutDTO : VehicleTypePostDTO
 {
     public int Id { get; set; }
 }

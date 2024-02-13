@@ -1,5 +1,5 @@
 ﻿namespace CarProject.Data.Shared.Enums;
 public enum OptionType
 {
-    CheckBox, RadioButton, Slider
+    CheckBox = 1, RadioButton  = 2, Slider = 3
 }
