@@ -15,9 +15,13 @@
                             Modeller
                         </a>
                         <ul class="dropdown-menu onclick">
-                            
+                             @foreach (var link in LinkGroup!.LinkOptions)
+                                {
+                                 <LinkComponent LinkOption="link" OnLinkClick="OnLinkPress"/>
+                                }
                             <li><a class="dropdown-item" href="#"> Alla modeller</a></li>
                             <li><hr class="dropdown-divider"></li>
+                         
                             <li><a class="dropdown-item" href="#"> Sedan</a></li>
                             <li><a class="dropdown-item" href="#"> Coupe</a></li>
                             <li><a class="dropdown-item" href="#"> Familjebilar</a></li>

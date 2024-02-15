@@ -1,5 +1,11 @@
-﻿<h3>LinkMainComponent</h3>
+﻿@using.CarShop.UI.Models.Link;
+
+<article>
+    <div class="bg-primary">@LinkGroup?.Name</div>
+    <div>Länkar</div>
+</article>
+
 
 @code {
-
+    [Parameter] public LinkGroup? LinkGroup { get; set; }
 }
