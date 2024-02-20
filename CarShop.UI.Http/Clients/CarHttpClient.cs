@@ -4,7 +4,7 @@ using System.Text.Json;
 namespace CarShop.UI.Http.Clients;
 
 
-internal class CarHttpClient
+public class CarHttpClient
 {
     private readonly HttpClient _httpClient;
     string _baseAddress = "https://localhost:5500/api/";

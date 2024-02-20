@@ -1,4 +1,6 @@
 ﻿@using CarShop.API.DTO.DTOs
+
+
 <nav class="navbar d-flex justify-content-between m-3">
 
     <a class="navbar-brand" href="#"><img src="images/vivavit.png" alt=" Viva logo"¨ style="height:80px;"></a>
@@ -16,7 +18,7 @@
                             Modeller
                         </a>
                         <ul class="dropdown-menu onclick">
-                             @foreach (var vt in VehicleTypes)
+                             @foreach (var vt in Service!.VehicleTypes)
                                 {
                                 <li ><a @onclick = "()=>OnClick(vt.Id)">@vt.Name</a></li>
                                 }
@@ -89,15 +91,20 @@
 
 
 @code {
+    
+    [CascadingParameter(Name = "Service")] public UIService? Service { get; set; }
+
+    [Parameter] public EventCallback OnChange { get; set; }
+
     void OnClick(int id)
     {
          
     }
 
-    List<VehicleTypeGetDTO> VehicleTypes { get; set; } = new()
-    {
-       new VehicleTypeGetDTO{Name="Coupe", Id=1},
-       new VehicleTypeGetDTO{Name="Familjebil", Id=2},
+//     List<VehicleTypeGetDTO> VehicleTypes { get; set; } = new()
+//     {
+//        new VehicleTypeGetDTO{Name="Coupe", Id=1},
+//        new VehicleTypeGetDTO{Name="Familjebil", Id=2},
 
-    };
-}
+//     };
+ }

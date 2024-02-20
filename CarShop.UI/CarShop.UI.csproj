@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Services\UIService.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="wwwroot\Images\pexels-jay-pizzle-3802510.jpg" />
     <None Remove="wwwroot\Images\pexels-mike-bird-116675.jpg" />
     <None Remove="wwwroot\Images\pexels-zsolt-joo-2882234.jpg" />
@@ -24,16 +20,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Services\UIService.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.2" PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CarShop.API.DTO\CarShop.API.DTO.csproj" />
+    <ProjectReference Include="..\CarShop.UI.Http\CarShop.UI.Http.csproj" />
     <ProjectReference Include="..\CarShop.UI.Models\CarShop.UI.Models.csproj" />
   </ItemGroup>
 

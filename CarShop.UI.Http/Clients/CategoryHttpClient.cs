@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace CarShop.UI.Http.Clients
 {
-    internal class CategoryHttpClient
+    public class CategoryHttpClient
     {
         private readonly HttpClient _httpClient;
         private string _baseAddress = "https://localhost:5000/api/";
