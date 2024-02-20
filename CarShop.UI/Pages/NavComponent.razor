@@ -15,17 +15,11 @@
                             Modeller
                         </a>
                         <ul class="dropdown-menu onclick">
-                             @foreach (var link in LinkGroup!.LinkOptions)
+                             @foreach (var vt in VehicleTypes)
                                 {
-                                 <LinkComponent LinkOption="link" OnLinkClick="OnLinkPress"/>
+                                 <li>@vt.Name</li> 
                                 }
-                            <li><a class="dropdown-item" href="#"> Alla modeller</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                         
-                            <li><a class="dropdown-item" href="#"> Sedan</a></li>
-                            <li><a class="dropdown-item" href="#"> Coupe</a></li>
-                            <li><a class="dropdown-item" href="#"> Familjebilar</a></li>
-                            <li><a class="dropdown-item" href="#"> El & hybrid- bilar</a></li>
+
                         </ul>
                     </li>
                     </li>
@@ -92,3 +86,11 @@
     </div>
 </nav>
 
+@code {
+    List<VehicleTypeGetDTO> VehicleTypes { get; set; } = new()
+    {
+       new VehicleTypeGetDTO{Name="Coupe", Id=1},
+       new VehicleTypeGetDTO{Name="Familjebil", Id=2},
+
+    };
+}

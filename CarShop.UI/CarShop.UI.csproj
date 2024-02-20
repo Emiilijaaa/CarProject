@@ -1,30 +1,14 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Services\UIService.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Remove="wwwroot\Images\pexels-jay-pizzle-3802510.jpg" />
@@ -40,11 +24,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Services\UIService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.1" PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CarShop.API.DTO\CarShop.API.DTO.csproj" />
     <ProjectReference Include="..\CarShop.UI.Models\CarShop.UI.Models.csproj" />
   </ItemGroup>
 

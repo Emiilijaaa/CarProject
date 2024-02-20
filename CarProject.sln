@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarShop.API.Products", "Car
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarShop.UI.Models", "CarShop.UI.Models\CarShop.UI.Models.csproj", "{2A6A7613-0F2F-453E-BB31-A70C2CF0DC18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarShop.UI", "CarShop.UI\CarShop.UI.csproj", "{FFBBC348-4B75-4612-929B-43721CBBB621}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarShop.UI", "CarShop.UI\CarShop.UI.csproj", "{FFBBC348-4B75-4612-929B-43721CBBB621}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarShop.UI.Http", "CarShop.UI.Http\CarShop.UI.Http.csproj", "{2C55F3D0-9B80-4A55-BE62-D5DC83B4A93F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{FFBBC348-4B75-4612-929B-43721CBBB621}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFBBC348-4B75-4612-929B-43721CBBB621}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFBBC348-4B75-4612-929B-43721CBBB621}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C55F3D0-9B80-4A55-BE62-D5DC83B4A93F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C55F3D0-9B80-4A55-BE62-D5DC83B4A93F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C55F3D0-9B80-4A55-BE62-D5DC83B4A93F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C55F3D0-9B80-4A55-BE62-D5DC83B4A93F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
