@@ -18,7 +18,7 @@
                         <ul class="dropdown-menu onclick">
                              @foreach (var vt in VehicleTypes)
                                 {
-                                 <li>@vt.Name</li> 
+                                <li ><a @onclick = "()=>OnClick(vt.Id)">@vt.Name</a></li>
                                 }
 
                         </ul>
@@ -87,7 +87,13 @@
     </div>
 </nav>
 
+
 @code {
+    void OnClick(int id)
+    {
+         
+    }
+
     List<VehicleTypeGetDTO> VehicleTypes { get; set; } = new()
     {
        new VehicleTypeGetDTO{Name="Coupe", Id=1},
