@@ -1,4 +1,5 @@
 ﻿using CarShop.API.DTO;
+using CarShop.API.DTO.DTOs;
 using System.Text.Json;
 
 namespace CarShop.UI.Http.Clients
@@ -6,15 +7,15 @@ namespace CarShop.UI.Http.Clients
     public class CategoryHttpClient
     {
         private readonly HttpClient _httpClient;
-        private string _baseAddress = "https://localhost:5000/api/";
+        private string _baseAddress = "https://localhost:5001/api/";
 
         public CategoryHttpClient(HttpClient httpClient)
         {
             _httpClient = httpClient;
-            _httpClient.BaseAddress = new Uri($"{_baseAddress}categories");
+            _httpClient.BaseAddress = new Uri($"{_baseAddress}categorys");
         }
 
-        public async Task<List<CategoryPutDTO>> GetCategoriesAsync()
+        public async Task<List<CategoryGetDTO>> GetCategoriesAsync()
         {
             try
             {
@@ -25,12 +26,12 @@ namespace CarShop.UI.Http.Clients
                     new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
 
-                var convertedResult = result?.Select(c => ConvertToCategoryPutDTO(c)).ToList() ?? new List<CategoryPutDTO>();
+                var convertedResult = result?? new List<CategoryGetDTO>();
                 return convertedResult;
             }
             catch (Exception ex)
             {
-                return new List<CategoryPutDTO>();
+                return new List<CategoryGetDTO>();
             }
         }
 
@@ -39,5 +40,7 @@ namespace CarShop.UI.Http.Clients
         {
             return new CategoryPutDTO();
         }
+
+
     }
 }

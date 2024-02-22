@@ -18,7 +18,7 @@
                             Modeller
                         </a>
                         <ul class="dropdown-menu onclick">
-                             @foreach (var vt in Service!.VehicleTypes)
+                             @foreach (var vt in Service!.Categories)
                                 {
                                 <li ><a @onclick = "()=>OnClick(vt.Id)">@vt.Name</a></li>
                                 }
@@ -91,11 +91,14 @@
 
 
 @code {
-    
+
     [CascadingParameter(Name = "Service")] public UIService? Service { get; set; }
 
     [Parameter] public EventCallback OnChange { get; set; }
-
+    protected override async Task OnParametersSetAsync()
+    {
+        await Service.GetCategories();
+    }
     void OnClick(int id)
     {
          
