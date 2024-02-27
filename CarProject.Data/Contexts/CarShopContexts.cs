@@ -57,14 +57,7 @@ public class CarShopContext(DbContextOptions<CarShopContext> options) : DbContex
 
             .UsingEntity<CarCategory>();
 
-        builder.Entity<Car>()
-
-            .HasOne(c => c.VehicleType)
-
-            .WithMany(vt => vt.Cars);
-
-
-
+    
 
         // CategoryFilter Many-to-Many Relationship
 
