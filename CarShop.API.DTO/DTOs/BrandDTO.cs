@@ -14,6 +14,6 @@ public class BrandPutDTO : BrandPostDTO
 
 public class BrandGetDTO : BrandPutDTO
 {
-    public List<CarGetDTO>? Cars { get; set; }
+    //public List<CarGetDTO>? Cars { get; set; }
 
 }

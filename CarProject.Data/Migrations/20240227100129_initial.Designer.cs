@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarProject.Data.Migrations
 {
     [DbContext(typeof(CarShopContext))]
-    [Migration("20240227095628_entities")]
-    partial class entities
+    [Migration("20240227100129_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
