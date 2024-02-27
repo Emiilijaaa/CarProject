@@ -9,8 +9,8 @@ public class Car : IEntity
 
     public int BrandId { get; set; }
     public Brand Brand { get; set; }
-    public int VehicleTypeId { get; set; }
-    public VehicleType VehicleType { get; set; }
+    public int CategoryID { get; set; }
+    public Category Category { get; set; }
 
 
     public List<Category>? Categories { get; set; }
