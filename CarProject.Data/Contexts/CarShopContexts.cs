@@ -49,15 +49,13 @@ public class CarShopContext(DbContextOptions<CarShopContext> options) : DbContex
 
             .UsingEntity<CarColor>();
 
+
         builder.Entity<Car>()
 
-            .HasMany(c => c.Categories)
+            .HasOne(c => c.Category)
 
-            .WithMany(cat => cat.Cars)
+            .WithMany(b => b.Cars);
 
-            .UsingEntity<CarCategory>();
-
-    
 
         // CategoryFilter Many-to-Many Relationship
 
