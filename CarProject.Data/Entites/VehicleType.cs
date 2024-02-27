@@ -1,4 +1,4 @@
-﻿using CarProject.Data.Shared.Interfaces;
+﻿/*using CarProject.Data.Shared.Interfaces;
 
 namespace CarProject.Data.Entities;
 
@@ -11,3 +11,4 @@ public class VehicleType : IEntity
     public List<Car>? Cars { get; set; }
 
 }
+*/

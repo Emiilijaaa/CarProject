@@ -1,4 +1,4 @@
-﻿namespace CarShop.API.DTO.DTOs;
+﻿/*namespace CarShop.API.DTO.DTOs;
 
 public class VehicleTypePostDTO
 {
@@ -17,4 +17,4 @@ public class VehicleTypeGetDTO : VehicleTypePutDTO
 {
     public List<CarGetDTO>? Cars { get; set; }
 
-}
+}*/

@@ -11,8 +11,8 @@ public class CarShopContext(DbContextOptions<CarShopContext> options) : DbContex
     public DbSet<Color> Colors => Set<Color>();
     public DbSet<Filter> Filters => Set<Filter>();
     public DbSet<CategoryFilter> CategoryFilters => Set<CategoryFilter>();
-    public DbSet<VehicleType> VehicleTypes => Set<VehicleType>();
-    public DbSet<Category> Categories => Set<Category>();
+/*    public DbSet<VehicleType> VehicleTypes => Set<VehicleType>();
+*/    public DbSet<Category> Categories => Set<Category>();
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
