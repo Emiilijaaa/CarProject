@@ -27,8 +27,8 @@ namespace CarShop.UI.Services
         public int CurrentCarId { get; set; }
         public async Task<List<CarGetDTO>> GetCarsByCategory(int id)
         {
-            var cars = await carHttp.GetCarsAsync(id);
-            return cars;
+            Cars = await carHttp.GetCarsAsync(id);
+            return Cars;
         }
 
 

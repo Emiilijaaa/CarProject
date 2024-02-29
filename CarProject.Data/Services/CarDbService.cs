@@ -10,8 +10,9 @@ public class CarDbService(CarShopContext db, IMapper mapper) : DbService(db, map
         where TDto : class
 
     {
-        //IncludeNavigationsFor<Color>();
+        IncludeNavigationsFor<Color>();
         IncludeNavigationsFor<Brand>();
+        IncludeNavigationsFor<Category>();
         var cars=db.Cars.Where(c => c.CategoryID == categoryId).ToList();
         return mapper.Map<List<TDto>>(cars);
     }

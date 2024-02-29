@@ -12,7 +12,7 @@ public class CategoryPutDTO : CategoryPostDTO
 }
     public class CategoryGetDTO : CategoryPutDTO
     {
-    public List<CarGetDTO>? Cars { get; set; }
+    //public List<CarGetDTO>? Cars { get; set; }
     //public List<FilterGetDTO>? Filters { get; set; }
 }
 

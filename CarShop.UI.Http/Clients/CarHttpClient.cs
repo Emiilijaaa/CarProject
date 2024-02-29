@@ -7,7 +7,7 @@ namespace CarShop.UI.Http.Clients;
 public class CarHttpClient
 {
     private readonly HttpClient _httpClient;
-    string _baseAddress = "https://localhost:5500/api/";
+    string _baseAddress = "https://localhost:5010/api/";
 
     public CarHttpClient(HttpClient httpClient)
     {
@@ -19,7 +19,7 @@ public class CarHttpClient
     {
         try
         {
-            string relativePath = $"Carsbycategory/{categoryId}";
+            string relativePath = $"{_httpClient.BaseAddress}bycategory/{categoryId}";
             using HttpResponseMessage response = await _httpClient.GetAsync(relativePath);
             response.EnsureSuccessStatusCode();
 

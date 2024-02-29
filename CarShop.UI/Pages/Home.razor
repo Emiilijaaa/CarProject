@@ -11,18 +11,18 @@
 
 <div id="viewport" class="d-flex vh-100">
     <ProductFilterComponent />
-    @foreach (var car in FetchedCars)
+    @foreach (var car in Service.Cars)
     {
         <ProductComponent Car="car" />
     }
     
 </div>
 @code {
-    List<CarGetDTO> FetchedCars = new List<CarGetDTO>();
+    //List<CarGetDTO> FetchedCars = new List<CarGetDTO>();
 
     async Task OnCategoryChange(int id)
     {
-        FetchedCars = await Service.GetCarsByCategory(id);
+        await Service.GetCarsByCategory(id);
        
         StateHasChanged();
     }

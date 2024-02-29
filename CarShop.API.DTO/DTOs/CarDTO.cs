@@ -17,7 +17,7 @@ public class CarPutDTO : CarPostDTO
 public class CarGetDTO : CarPutDTO
 {
     public BrandGetDTO Brand { get; set; }
-    public List<CategoryGetDTO>? Categories { get; set; }
+    public CategoryGetDTO? Category { get; set; }
 
     public List<ColorGetDTO>? Colors { get; set; }
 
