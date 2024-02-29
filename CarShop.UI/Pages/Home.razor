@@ -1,7 +1,7 @@
 ﻿@page "/"
 @inject UIService Service
 <CascadingValue Value="Service" Name="Service">
-<NavComponent />
+    <NavComponent OnChange="OnCategoryChange" />
 </CascadingValue>
 <MenuComponent />
 <img src="Images/VV.png" />
@@ -11,7 +11,17 @@
 
 <div id="viewport" class="d-flex vh-100">
     <ProductFilterComponent />
-    <ProductComponent />
+    @foreach (var car in FetchedCars)
+    {
+        <ProductComponent Car="car" />
+    }
     
 </div>
-
+@code{
+    List<CarGetDTO> FetchedCars = [];
+    void OnCategoryChange(int id)
+    {
+        FetchedCars = Service.GetCarsByCategory(id);
+        // Hämta bilar från API och spara i en List<CarGetDTO>
+    }
+}

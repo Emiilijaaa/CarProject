@@ -103,7 +103,9 @@
     }
     void OnClick(int id)
     {
-         
+        if (OnChange.HasDelegate && Service is not null)
+            OnChange.InvokeAsync(id);
+
     }
 
 //     List<VehicleTypeGetDTO> VehicleTypes { get; set; } = new()

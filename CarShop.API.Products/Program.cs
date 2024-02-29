@@ -1,4 +1,3 @@
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -49,9 +48,22 @@ void RegisterEndpoints()
     app.AddEndpoint<Car, CarPostDTO, CarPutDTO, CarGetDTO>();
     app.AddEndpoint<Color, ColorPostDTO, ColorPutDTO, ColorGetDTO>();
     app.AddEndpoint<Brand, BrandPostDTO, BrandPutDTO, BrandGetDTO>();
-/*    app.AddEndpoint<VehicleType, VehicleTypePostDTO, VehicleTypePutDTO, VehicleTypeGetDTO>();
-*/    app.AddEndpoint<CarColor, CarColorDTO>();
+  app.AddEndpoint<Category, CategoryPostDTO, CategoryPutDTO, CategoryGetDTO>();
+   app.AddEndpoint<CarColor, CarColorDTO>();
     app.AddEndpoint<CarCategory, CarCategoryDTO>();
+        app.MapGet($"/api/carsbycategory/{{categoryId}}", (IDbService db, int categoryId) =>
+        {
+            try
+            {
+                var result = ((CarDbService)db).GetCarsByCategory<Car, CarGetDTO>(categoryId);
+                return Results.Ok(result);
+            }
+            catch
+            {
+            }
+
+            return Results.BadRequest($"Couldn't get the requested products of type {typeof(Car).Name}.");
+        });
 
 }
 
@@ -75,10 +87,10 @@ void ConfigureAutoMapper()
         cfg.CreateMap<Brand, BrandPostDTO>().ReverseMap();
         cfg.CreateMap<Brand, BrandPutDTO>().ReverseMap();
         cfg.CreateMap<Brand, BrandGetDTO>().ReverseMap();
-/*        cfg.CreateMap<VehicleType, VehicleTypePostDTO>().ReverseMap();
-        cfg.CreateMap<VehicleType, VehicleTypePutDTO>().ReverseMap();
-        cfg.CreateMap<VehicleType, VehicleTypeGetDTO>().ReverseMap();
-*/
+        cfg.CreateMap<Category, CategoryPostDTO>().ReverseMap();
+        cfg.CreateMap<Category, CategoryPutDTO>().ReverseMap();
+        cfg.CreateMap<Category, CategoryGetDTO>().ReverseMap();
+
         /*cfg.CreateMap<Filter, FilterGetDTO>().ReverseMap();
         cfg.CreateMap<Size, OptionDTO>().ReverseMap();
         cfg.CreateMap<Color, OptionDTO>().ReverseMap();*/

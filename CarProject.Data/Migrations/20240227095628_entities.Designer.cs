@@ -12,13 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarProject.Data.Migrations
 {
     [DbContext(typeof(CarShopContext))]
-<<<<<<<< HEAD:CarProject.Data/Migrations/20240227100023_entities.Designer.cs
-    [Migration("20240227100023_entities")]
+    [Migration("20240227095628_entities")]
     partial class entities
-========
-    [Migration("20240227100129_initial")]
-    partial class initial
->>>>>>>> 81c25974a87e332992723d7bb68457e5cd5fec27:CarProject.Data/Migrations/20240227100129_initial.Designer.cs
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

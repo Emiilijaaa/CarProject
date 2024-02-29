@@ -1,12 +1,18 @@
 ﻿
+using CarProject.Data.Entities;
+
 namespace CarProject.Data.Services;
 
 public class CarDbService(CarShopContext db, IMapper mapper) : DbService(db, mapper)
 {
-    public override async Task<List<TDto>> GetAsync<TEntity, TDto>()
+    public List<TDto> GetCarsByCategory<TEntity, TDto>(int categoryId)
+        where TEntity : class
+        where TDto : class
+
     {
-        //IncludeNavigationsFor<Filter>();
-        //IncludeNavigationsFor<Product>();
-        return await base.GetAsync<TEntity, TDto>();
+        //IncludeNavigationsFor<Color>();
+        IncludeNavigationsFor<Brand>();
+        var cars=db.Cars.Where(c => c.CategoryID == categoryId).ToList();
+        return mapper.Map<List<TDto>>(cars);
     }
 }
