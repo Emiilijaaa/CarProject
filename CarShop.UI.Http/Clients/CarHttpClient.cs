@@ -12,27 +12,27 @@ public class CarHttpClient
     public CarHttpClient(HttpClient httpClient)
     {
         _httpClient = httpClient;
-        _httpClient.BaseAddress = new Uri($"{_baseAddress}products");
+        _httpClient.BaseAddress = new Uri($"{_baseAddress}Cars");
     }
 
-    public async Task<List<CarPostDTO>> GetCarsAsync(int categoryId)
+    public async Task<List<CarGetDTO>> GetCarsAsync(int categoryId)
     {
         try
         {
-            // Use the relative path, not the base address here
-            string relativePath = $"productsbycategory/{categoryId}";
+            string relativePath = $"Carsbycategory/{categoryId}";
             using HttpResponseMessage response = await _httpClient.GetAsync(relativePath);
             response.EnsureSuccessStatusCode();
 
             var resultStream = await response.Content.ReadAsStreamAsync();
-            var result = await JsonSerializer.DeserializeAsync<List<CarGetDTO>>(resultStream,
-                new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+            var result = await JsonSerializer.DeserializeAsync<List<CarGetDTO>>(resultStream, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
-            return result ?? [];
+            return result ?? new List<CarGetDTO>();
         }
         catch (Exception ex)
         {
-            return [];
+            // Logga undantaget eller hantera det på lämpligt sätt
+            return new List<CarGetDTO>();
         }
     }
+
 }

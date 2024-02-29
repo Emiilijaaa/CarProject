@@ -25,25 +25,30 @@ namespace CarShop.UI.Services
             Categories = await categoryHttp.GetCategoriesAsync();
         }
         public int CurrentCarId { get; set; }
-        public async Task GetCarsByCategory(int id)
-
+        public async Task<List<CarGetDTO>> GetCarsByCategory(int id)
         {
-            Cars = await carHttp.GetCarsAsync(id);
+            var cars = await carHttp.GetCarsAsync(id);
+            return cars;
         }
-        
-        public async Task GetProductsAsync() =>
-        Cars = await productHttp.GetCarAsync(CurrentCarId);
+
+
+        public async Task GetProductsAsync()
+        {
+            Cars = await carHttp.GetCarsAsync(CurrentCarId);
+           
+        }
+
     }
 
 
 
 
 
-        //    public async Task GetProductsAsync() =>
+    //    public async Task GetProductsAsync() =>
 
-        //        Products = await productHttp.GetProductsAsync(CurrentCategoryId);
+    //        Products = await productHttp.GetProductsAsync(CurrentCategoryId);
 
 
-        //}
-    }
+    //}
 }
+

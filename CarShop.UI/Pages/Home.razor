@@ -17,11 +17,14 @@
     }
     
 </div>
-@code{
-    List<CarGetDTO> FetchedCars = [];
-    void OnCategoryChange(int id)
+@code {
+    List<CarGetDTO> FetchedCars = new List<CarGetDTO>();
+
+    async Task OnCategoryChange(int id)
     {
-        FetchedCars = Service.GetCarsByCategory(id);
-        // Hämta bilar från API och spara i en List<CarGetDTO>
+        FetchedCars = await Service.GetCarsByCategory(id);
+       
+        StateHasChanged();
     }
 }
+

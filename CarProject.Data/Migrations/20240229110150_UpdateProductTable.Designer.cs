@@ -12,13 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarProject.Data.Migrations
 {
     [DbContext(typeof(CarShopContext))]
-<<<<<<<< HEAD:CarProject.Data/Migrations/20240227100023_entities.Designer.cs
-    [Migration("20240227100023_entities")]
-    partial class entities
-========
-    [Migration("20240227100129_initial")]
-    partial class initial
->>>>>>>> 81c25974a87e332992723d7bb68457e5cd5fec27:CarProject.Data/Migrations/20240227100129_initial.Designer.cs
+    [Migration("20240229110150_UpdateProductTable")]
+    partial class UpdateProductTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -91,6 +86,14 @@ namespace CarProject.Data.Migrations
 
                     b.Property<int>("CategoryID")
                         .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PictureURL")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Price")
                         .HasColumnType("float");

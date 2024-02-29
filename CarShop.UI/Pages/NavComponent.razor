@@ -96,7 +96,7 @@
 
     [CascadingParameter(Name = "Service")] public UIService? Service { get; set; }
 
-    [Parameter] public EventCallback OnChange { get; set; }
+    [Parameter] public EventCallback<int> OnChange { get; set; }
     protected override async Task OnParametersSetAsync()
     {
         await Service.GetCategories();
