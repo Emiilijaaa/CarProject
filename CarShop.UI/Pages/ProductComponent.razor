@@ -30,21 +30,21 @@
                     <input type="radio" class="btn-check" name="btnradio" id="btnradio3-@Car.Id" autocomplete="off">
                     <label class="btn btn-outline-primary" for="btnradio3-@Car.Id">Gammal</label> *@
                 </div>
-             }
+             
             @if (Car.Colors!.Count > 0)
-            {
+            
                 foreach (var color in Car.Colors)
                 {
                     <div class="btn-group mx-2" role="group" aria-label="Basic radio toggle button group">
                         <input type="radio" class="btn-check" name="color-@Car.Id-@color.Id" id="color-@Car.Id-@color.Id"
                                autocomplete="off" @onclick="() => OnColorClick(Car, color)">
-                        <label class="btn btn-sm btn-outline-primary"
+                        <label class="btn btn-sm btn-outline-dark"
                                style="background-color:#@color.BGColor; color:#@(color.IsSelected ? color.TextColor : color.BGColor)"
                                for="color-@Car.Id-@color.Id"><i class="bi-check"></i></label>
                     </div>
                 }
-            }
-            <button class="btn btn-sm btn-success" @onclick="() => SavedCars(Car)"><i class="bi-cart"></i></button> 
+            
+            <button class="btn btn-sm btn-dark" @onclick="() => SavedCars(Car)"><i class="bi bi-bookmark"></i></button> 
             </div>
             </div>
             
