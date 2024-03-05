@@ -1,29 +1,69 @@
-﻿﻿<section class="d-flex flex-wrap md-3">
+﻿
+﻿<section class="d-flex flex-wrap mx-3">
     <div class="card" style="width: 18rem;">
                 <img src="@Car.PictureURL" class="img-fluid start" alt="...">
-        <div class="card-body">
         <h5 class="card-title">@Car.Brand.Name</h5>
         <p class="card-text">@Car.Description</p>
-            <a href="#" class="btn btn-dark">Köp nu</a>
-
-            </div>
-            <div class="">
-            <div class=" row card-footer g-0">
+        <a href="#" class="btn btn-dark mt-5">Köp nu</a>
+         <div class="">
+            <div class=" d-flex card-footer g-0">
                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                     <input type="radio" class="btn-check" name="btnradio" id="btnradio1-@Car.Id" autocomplete="off" checked>
-                    <label class="btn btn-outline-primary" for="btnradio1">Ny</label>
+                    <label class="btn btn-outline-primary" for="btnradio1-@Car.Id">Ny</label>
 
                     <input type="radio" class="btn-check" name="btnradio" id="btnradio2-@Car.Id" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="btnradio2">Begagnat</label>
+                    <label class="btn btn-outline-primary" for="btnradio2-@Car.Id">Begagnat</label>
 
                     <input type="radio" class="btn-check" name="btnradio" id="btnradio3-@Car.Id" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="btnradio3">Gammal</label>
-                </div>
+                    <label class="btn btn-outline-primary" for="btnradio3-@Car.Id">Gammal</label>
+
             </div>
-        </div>
-    </div>
+         @*    <div class="">
+            <div class=" d-flex card-footer g-0">
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1-@Car.Id" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="btnradio1-@Car.Id">Ny</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2-@Car.Id" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio2-@Car.Id">Begagnat</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio3-@Car.Id" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio3-@Car.Id">Gammal</label> *@
+                </div>
+             }
+            @if (Car.Colors!.Count > 0)
+            {
+                foreach (var color in Car.Colors)
+                {
+                    <div class="btn-group mx-2" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="color-@Car.Id-@color.Id" id="color-@Car.Id-@color.Id"
+                               autocomplete="off" @onclick="() => OnColorClick(Car, color)">
+                        <label class="btn btn-sm btn-outline-primary"
+                               style="background-color:#@color.BGColor; color:#@(color.IsSelected ? color.TextColor : color.BGColor)"
+                               for="color-@Car.Id-@color.Id"><i class="bi-check"></i></label>
+                    </div>
+                }
+            }
+            <button class="btn btn-sm btn-success" @onclick="() => SavedCars(Car)"><i class="bi-cart"></i></button> 
+            </div>
+            </div>
+            
+            
+        
 </section>
 
 @code {
+
     [Parameter] public CarGetDTO Car { get; set; }
+
+    void OnColorClick(CarGetDTO car, ColorGetDTO color)
+    {
+        
+    }
+
+    void SavedCars(CarGetDTO car)
+    {
+        
+    }
 }
+

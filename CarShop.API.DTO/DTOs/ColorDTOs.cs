@@ -3,6 +3,8 @@
 public class ColorPostDTO
 {
     public string Name { get; set; } = string.Empty;
+    public string BGColor { get; set; }
+    public string TextColor { get; set; }
     public OptionType OptionType { get; set; }
 }
 
@@ -13,5 +15,5 @@ public class ColorPutDTO : ColorPostDTO
 
 public class ColorGetDTO : ColorPutDTO
 {
-    //public List<ColorGetDTO>? Cars { get; set; }
+   public bool IsSelected { get; set; }
 }

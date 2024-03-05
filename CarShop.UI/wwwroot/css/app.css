@@ -85,7 +85,13 @@ code {
     font-family: Verdana, sans-serif;
     font-display: block;
 }
-
+.btn-radio {
+    width: 45px;
+}
+.card-footer {
+    background-color: transparent;
+    border-top: none;
+}
 /*.product-card {
     margin-left: 1.5rem;
     margin-right: 1.5rem;

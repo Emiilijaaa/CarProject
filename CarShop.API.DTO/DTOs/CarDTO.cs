@@ -18,8 +18,9 @@ public class CarGetDTO : CarPutDTO
 {
     public BrandGetDTO Brand { get; set; }
     public CategoryGetDTO? Category { get; set; }
-
     public List<ColorGetDTO>? Colors { get; set; }
+    public List<BrandGetDTO>? Brands { get; set; }
+
 
 }
 
