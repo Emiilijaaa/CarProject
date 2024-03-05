@@ -6,47 +6,41 @@
         <p class="card-text">@Car.Description</p>
         <a href="#" class="btn btn-dark mt-5">Köp nu</a>
          <div class="">
-            <div class=" d-flex card-footer g-0">
-                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1-@Car.Id" autocomplete="off" checked>
-                    <label class="btn btn-outline-primary" for="btnradio1-@Car.Id">Ny</label>
+        </div>
+    </div>
+    <div class=" d-flex card-footer bg-white g-0 justify-content-start">
+        @if (Car.Brands!.Count > 0)
+        {
+                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                        @foreach (var Brand in Car.Brands)
+                        {
+                            <input type="radio" class="btn-check" name="btnradio" 
+                            id="Brand-@Car.Id-@Brand.Id"
+                           @onclick="() => OnBrandClick(Car, Brand)"
+                            autocomplete="off" checked>
+                            <label class="btn btn-outline-primary btn-radio" 
+                            for="Brand-@Car.Id-@Brand.Id">brand.Name()</label>
+                        }
+                    </div>
+        }            
+    </div>
 
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2-@Car.Id" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="btnradio2-@Car.Id">Begagnat</label>
-
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio3-@Car.Id" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="btnradio3-@Car.Id">Gammal</label>
-
-            </div>
-         @*    <div class="">
-            <div class=" d-flex card-footer g-0">
-                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1-@Car.Id" autocomplete="off" checked>
-                    <label class="btn btn-outline-primary" for="btnradio1-@Car.Id">Ny</label>
-
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2-@Car.Id" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="btnradio2-@Car.Id">Begagnat</label>
-
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio3-@Car.Id" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="btnradio3-@Car.Id">Gammal</label> *@
-                </div>
              
             @if (Car.Colors!.Count > 0)
-            
+            {
                 foreach (var color in Car.Colors)
                 {
                     <div class="btn-group mx-2" role="group" aria-label="Basic radio toggle button group">
                         <input type="radio" class="btn-check" name="color-@Car.Id-@color.Id" id="color-@Car.Id-@color.Id"
                                autocomplete="off" @onclick="() => OnColorClick(Car, color)">
                         <label class="btn btn-sm btn-outline-dark"
-                               style="background-color:#@color.BGColor; color:#@(color.IsSelected ? color.TextColor : color.BGColor)"
+                               style="background-color:#@color.BGColor; color:#(@color.IsSelected ? color.TextColor : color.BGColor)"
                                for="color-@Car.Id-@color.Id"><i class="bi-check"></i></label>
                     </div>
                 }
-            
+            }  
             <button class="btn btn-sm btn-dark" @onclick="() => SavedCars(Car)"><i class="bi bi-bookmark"></i></button> 
-            </div>
-            </div>
+        
             
             
         
@@ -58,11 +52,20 @@
 
     void OnColorClick(CarGetDTO car, ColorGetDTO color)
     {
-        
+        Car.Colors!.ForEach(c => c.IsSelected = false);
+        color.IsSelected = true;
     }
 
+    void OnBrandClick(CarGetDTO car, BrandGetDTO brand)
+    {
+        Car.Brands!.ForEach(c => c.IsSelected = false);
+        brand.IsSelected = true;
+    }
+
+    
     void SavedCars(CarGetDTO car)
     {
+
         
     }
 }

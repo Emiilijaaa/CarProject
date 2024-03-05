@@ -1,5 +1,5 @@
 ﻿
-<div class="d-flex w-90 mx-auto my-5 product-card-list">
+<div class="d-flex my-5 product-card-list">
     @foreach(var card in Cards)
     {
     <CardComponent Card="card" />
@@ -8,13 +8,12 @@
 </div>
 
 @code{
-   
+
     List<ProductCard> Cards = new()
     {
-        new ProductCard{ Image = "Images/pexels-jay-pizzle-3802510.jpg", Heading = "product 1" },
-        new ProductCard{ Image = "Images/pexels-mike-bird-116675.jpg", Heading = "product 2" },
-        new ProductCard{ Image = "Images/pexels-jzsolt-joo-2882234.jpg", Heading = "product 3" },
-        new ProductCard{ Image = "Images/V.V.jpg", Heading = "product 4" }
+        new ProductCard{ Image = "Images/Mechanic.jpg", Heading = "Vi tar hand om det mekaniska" },
+        new ProductCard{ Image = "Images/BlackCar.jpg", Heading = "Snabbaste bilarna" },
+        new ProductCard{ Image = "Images/Hastighet.jpg", Heading = "Ingen hastighets-begränsning " },
 
     };
 }
