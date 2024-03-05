@@ -99,3 +99,10 @@ code {
     margin-right: 0rem;
 }*/
 
+.radio.row > *{
+    width:0px;
+}
+
+.btn-radio{
+    width: 45px;
+}
