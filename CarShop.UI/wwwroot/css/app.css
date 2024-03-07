@@ -92,16 +92,8 @@ code {
     background-color: transparent;
     border-top: none;
 }
-/*.product-card {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+.product-image-size {
+    width: 450px;
+    height: 500px;
 }
-
-.product-card-list:first-child {
-    margin-left: 0rem;
-}
-
-.product-card-list:last-child {
-    margin-right: 0rem;
-}*/
 
