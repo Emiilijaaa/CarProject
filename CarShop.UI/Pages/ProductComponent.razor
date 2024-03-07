@@ -1,5 +1,5 @@
-﻿﻿<section class="d-flex flex-wrap mx-3 mx-auto mt-5">
-    <div class="card" style="width: 18rem;">
+﻿﻿<section class="d-flex mx-3 mx-auto mt-5 ">
+    <div class="card" style="width: 30rem;">
         <img src="@Car.PictureURL" class="img-fluid start" alt="...">
         <h5 class="card-title">@Car.Brand.Name</h5>
         <p class="card-text">@Car.Description</p>
@@ -16,9 +16,9 @@
                 {
                     <div class="btn-group mx-2" role="group" aria-label="Basic radio toggle button group">
                         <input type="radio" class="btn-check" name="color-@Car.Id-@color.Id" id="color-@Car.Id-@color.Id"
-                               autocomplete="off" @onclick="() => OnColorClick(Car, color)">
+                               autocomplete="off" @onclick="() => OnColorClick(color)">
                         <label class="btn btn-sm btn-outline-dark"
-                               style="background-color:#@color.BGColor; color:#(@color.IsSelected ? color.TextColor : color.BGColor)"
+                               style="background-color:#@color.BGColor; color:#@(color.IsSelected ? color.TextColor : color.BGColor)"
                                for="color-@Car.Id-@color.Id"><i class="bi-check"></i></label>
                     @* <button class="btn btn-sm btn-dark" @onclick="() => SavedCars(Car)"><i class="bi bi-bookmark"></i></button> *@
 
@@ -35,7 +35,7 @@
 
     [Parameter] public CarGetDTO Car { get; set; }
 
-    void OnColorClick(CarGetDTO car, ColorGetDTO color)
+    void OnColorClick(ColorGetDTO color)
     {
         Car.Colors!.ForEach(c => c.IsSelected = false);
         color.IsSelected = true;
