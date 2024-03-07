@@ -30,6 +30,7 @@
     <ProjectReference Include="..\CarShop.API.DTO\CarShop.API.DTO.csproj" />
     <ProjectReference Include="..\CarShop.UI.Http\CarShop.UI.Http.csproj" />
     <ProjectReference Include="..\CarShop.UI.Models\CarShop.UI.Models.csproj" />
+    <ProjectReference Include="..\CarShop.UI.Storage\CarShop.UI.Storage.csproj" />
   </ItemGroup>
 
 </Project>

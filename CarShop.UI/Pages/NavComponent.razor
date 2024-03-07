@@ -81,15 +81,16 @@
             </ul>
         </div>
         <div class="dropdown-center">
-            <button class="rounded-0 btn btn-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="bi bi-bookmark"></i>
+            <button class="rounded-0 btn btn-light" type="button" 
+            data-bs-toggle="modal" data-bs-target="#cart" aria-expanded="false">
+            <i class="bi bi-bookmark"></i>
             </button>
-            <ul class="dropdown-menu rounded-0">
-                <li><a class="dropdown-item btn btn-dark" href="#">Sparade bilar</a></li>
-            </ul>
+            
         </div>
     </div>
 </nav>
+<CartComponent/>
+
 
 
 @code {

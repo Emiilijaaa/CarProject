@@ -1,7 +1,9 @@
 using AutoMapper;
+using Blazored.LocalStorage;
 using CarShop.UI;
 using CarShop.UI.Models.Link;
 using CarShop.UI.Services;
+using CarShop.UI.Storage.Services;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
@@ -14,6 +16,10 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 builder.Services.AddHttpClient<CategoryHttpClient>(); 
 builder.Services.AddHttpClient<CarHttpClient>();
 builder.Services.AddSingleton<UIService>();
+builder.Services.AddSingleton<IStorageService, LocalStorage>();
+builder.Services.AddBlazoredLocalStorageAsSingleton();
+
+
 
 ConfigureAutoMapper();
 
