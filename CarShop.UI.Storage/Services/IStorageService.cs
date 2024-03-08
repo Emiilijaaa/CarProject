@@ -1,5 +1,4 @@
-﻿
-namespace CarShop.UI.Storage.Services;
+﻿namespace CarShop.UI.Storage.Services;
 
 public interface IStorageService
 {

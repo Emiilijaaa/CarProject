@@ -1,5 +1,4 @@
-﻿
-using Blazored.SessionStorage;
+﻿using Blazored.SessionStorage;
 
 namespace CarShop.UI.Storage.Services;
 

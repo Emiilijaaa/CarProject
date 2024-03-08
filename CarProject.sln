@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarShop.UI", "CarShop.UI\Ca
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarShop.UI.Http", "CarShop.UI.Http\CarShop.UI.Http.csproj", "{2C55F3D0-9B80-4A55-BE62-D5DC83B4A93F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarShop.UI.Storage", "CarShop.UI.Storage\CarShop.UI.Storage.csproj", "{DA4D8763-7C01-4C22-BDD8-6B74E1ED2585}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarShop.UI.Storage", "CarShop.UI.Storage\CarShop.UI.Storage.csproj", "{DA4D8763-7C01-4C22-BDD8-6B74E1ED2585}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

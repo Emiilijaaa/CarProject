@@ -1,21 +1,16 @@
 ﻿using AutoMapper;
 using CarShop.API.DTO.DTOs;
 using CarShop.UI.Models.Link;
+using CarShop.UI.Storage.Services;
 using System.Net.NetworkInformation;
 
 namespace CarShop.UI.Services
 {
-    public class UIService(CategoryHttpClient categoryHttp, CarHttpClient carHttp, IMapper mapper)
+    public class UIService(CategoryHttpClient categoryHttp, CarHttpClient carHttp, IMapper mapper, I﻿StorageService storage)
     {
         public List<CategoryGetDTO> Categories { get; set; } = new();
-        //{
-        // new CategoryGetDTO{Name="Coupe", Id=1},
-        //new CategoryGetDTO{Name="Familjebil", Id=2},
-        //};
-
         public List<CarGetDTO> Cars { get; private set; } = [];
-
-
+        public List<CarGetDTO> CartItems { get; set; } = [];
 
         public int CurrentCategoryId { get; set; }
 
@@ -37,6 +32,28 @@ namespace CarShop.UI.Services
             Cars = await carHttp.GetCarsAsync(CurrentCarId);
            
         }
+
+        public async Task<T> ReadStorage<T>(string key) 
+        {
+            //if (string.IsNullOrEmpty(key) || storage is not null) return;
+            return await storage.GetAsync<T>(key);
+        }
+
+        public async Task<T> ReadSingleStorage<T>(string key)
+        {
+            return await storage.GetAsync<T>(key);
+        }
+        public async Task SaveToStorage<T>(string key, T value)
+        {
+            if (string.IsNullOrEmpty(key) || storage is null) return;
+            await storage.SetAsync<T>(key, value);
+        }
+        public async Task RemoveFromStorage<T>(string key)
+        {
+            if (string.IsNullOrEmpty(key) || storage is null) return;
+            await storage.RemoveAsync(key);
+        }
+
 
     }
 

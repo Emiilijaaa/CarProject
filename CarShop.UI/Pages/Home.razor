@@ -1,5 +1,7 @@
 ﻿@page "/"
 @inject UIService Service
+
+<NavComponent UIService="Service" />
 <CascadingValue Value="Service" Name="Service">
     <NavComponent OnChange="OnCategoryChange" />
 </CascadingValue>
@@ -8,6 +10,9 @@
 <CarouselComponent />
 <CardListComponent />
 
+<CascadingValue Value="Service" Name="Service">
+        <ProductComponent OnChange="OnChange" />
+     </CascadingValue>
 
 <div id="viewport" class="d-flex vh-100 flex-wrap">
     @* <ProductFilterComponent /> *@
@@ -17,6 +22,8 @@
     }
     
 </div>
+<FooterComponent/>
+
 @code {
     //List<CarGetDTO> FetchedCars = new List<CarGetDTO>();
 

@@ -89,30 +89,26 @@
         </div>
     </div>
 </nav>
-<CartComponent/>
+<CartComponent CartItems="Service.CartItems"/>
 
 
 
 @code {
-
+    //[Parameter] public UIService? UICartService { get; set; }
     [CascadingParameter(Name = "Service")] public UIService? Service { get; set; }
-
     [Parameter] public EventCallback<int> OnChange { get; set; }
+
     protected override async Task OnParametersSetAsync()
     {
-        await Service.GetCategories();
+        Service!.CartItems = await Service!.ReadStorage<List<CarGetDTO>>("CartItems") ?? [];
+        await Service.GetCategories();     
     }
+    
+
     void OnClick(int id)
     {
         if (OnChange.HasDelegate && Service is not null)
             OnChange.InvokeAsync(id);
-
     }
 
-//     List<VehicleTypeGetDTO> VehicleTypes { get; set; } = new()
-//     {
-//        new VehicleTypeGetDTO{Name="Coupe", Id=1},
-//        new VehicleTypeGetDTO{Name="Familjebil", Id=2},
-
-//     };
  }
