@@ -23,7 +23,10 @@ public class CarGetDTO : CarPutDTO
 
 
 }
-
+public class CartItemDTO : CarPutDTO
+{
+    public ColorGetDTO? Color { get; set; }
+}
 
 public class CarSmallGetDTO : CarPutDTO
 {

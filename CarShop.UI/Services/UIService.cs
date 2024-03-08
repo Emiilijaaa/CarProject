@@ -3,6 +3,7 @@ using CarShop.API.DTO.DTOs;
 using CarShop.UI.Models.Link;
 using CarShop.UI.Storage.Services;
 using System.Net.NetworkInformation;
+using System.ComponentModel;
 
 namespace CarShop.UI.Services
 {
@@ -10,7 +11,7 @@ namespace CarShop.UI.Services
     {
         public List<CategoryGetDTO> Categories { get; set; } = new();
         public List<CarGetDTO> Cars { get; private set; } = [];
-        public List<CarGetDTO> CartItems { get; set; } = [];
+        public List<CartItemDTO> CartItems { get; set; } = [];
 
         public int CurrentCategoryId { get; set; }
 

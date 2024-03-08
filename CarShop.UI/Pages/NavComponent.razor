@@ -89,7 +89,7 @@
         </div>
     </div>
 </nav>
-<CartComponent CartItems="Service.CartItems"/>
+<CartComponent OnRemoveCartItem="OnRemoveCartItem" CartItems="UICartService.CartItems" />
 
 
 
@@ -100,9 +100,10 @@
 
     protected override async Task OnParametersSetAsync()
     {
-        Service!.CartItems = await Service!.ReadStorage<List<CarGetDTO>>("CartItems") ?? [];
+        UICartService!.CartItems = await UICartService!.ReadStorage<List<CartItemDTO>>("CartItems") ?? [];
         await Service.GetCategories();     
     }
+
     
 
     void OnClick(int id)

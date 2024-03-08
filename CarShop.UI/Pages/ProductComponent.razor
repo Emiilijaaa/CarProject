@@ -1,5 +1,8 @@
 ﻿    @using CarShop.UI.Storage.Services
-    @inject I﻿StorageService Storage
+    @using AutoMapper;
+
+    @inject IMapper mapper
+
     <section class="d-flex mx-3 mx-auto mt-5 ">
     <div class="card" style="width: 30rem;">
         <img src="@Car.PictureURL" class="img-fluid start" alt="...">
@@ -36,6 +39,7 @@
 
     [Parameter] public CarGetDTO Car { get; set; }
     [CascadingParameter(Name = "Service")] public UIService? Service { get; set; }
+    [Parameter] public EventCallback OnChange { get; set; }
 
     void OnColorClick(ColorGetDTO color)
     {
@@ -46,9 +50,14 @@
 
     async Task SavedCars(CarGetDTO car)
     {
-        Service!.CartItems.Add(car);
+       
+        var cartItem = mapper.Map<CartItemDTO>(car);
+        cartItem.Color = car.Colors!.FirstOrDefault(c => c.IsSelected);
+        Service!.CartItems.Add(cartItem);
         await Service!.SaveToStorage("CartItems", Service!.CartItems);
 
+        if (OnChange.HasDelegate)
+            await OnChange.InvokeAsync();
         
         // await Storage.SetAsync("MyKey", car);
         // await Storage.RemoveAsync("MyKey");
