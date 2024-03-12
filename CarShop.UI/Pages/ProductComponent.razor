@@ -2,43 +2,50 @@
     @using AutoMapper;
 
     @inject IMapper mapper
+    @inject UIService Service
 
-    <section class="d-flex mx-3 mx-auto mt-5 ">
+<section class="d-flex mx-3 mx-auto mt-5 ">
     <div class="card" style="width: 30rem;">
         <img src="@Car.PictureURL" class="img-fluid start" alt="...">
         <h5 class="card-title">@Car.Brand.Name</h5>
         <p class="card-text">@Car.Description</p>
         <a href="#" class="btn btn-dark mt-5">Köp nu</a>
         <div class="">
-    
-        <div class="d-flex card-footer bg-white g-0 justify-content-bewtween">
-        </div>
-
-        @if (Car.Colors!.Count > 0)
-        {
-
-    @foreach (var color in Car.Colors)
-        {
-            <div class="btn-group mx-2" role="group" aria-label="Basic radio toggle button group">
-                <input type="radio" class="btn-check" name="color-@Car.Id-@color.Id" id="color-@Car.Id-@color.Id"
-                        autocomplete="off" @onclick="() => OnColorClick(color)">
-                <label class="btn btn-sm btn-outline-dark rounded-circle"
-                        style="background-color:#@color.BGColor; color:#@(color.IsSelected ? color.TextColor : color.BGColor)"
-                        for="color-@Car.Id-@color.Id"><i class="bi-check"></i></label>
-
+            <div class="d-flex card-footer bg-white g-0 justify-content-bewtween">
             </div>
-        }
-        }
-                <button class="btn btn-sm btn-dark" @onclick="() => SavedCars(Car)"><i class="bi bi-bookmark"></i></button>
 
+            @if (Car.Colors!.Count > 0)
+            {
+
+                @foreach (var color in Car.Colors)
+                {
+                    <div class="btn-group mx-2" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="color-@Car.Id-@color.Id" id="color-@Car.Id-@color.Id"
+                               autocomplete="off" @onclick="() => OnColorClick(color)">
+                        <label class="btn btn-sm btn-outline-dark rounded-circle"
+                               style="background-color:#@color.BGColor; color:#@(color.IsSelected ? color.TextColor : color.BGColor)"
+                               for="color-@Car.Id-@color.Id"><i class="bi-check"></i></label>
+
+                    </div>
+                }
+            }
+            <button class="btn btn-sm btn-dark" @onclick="() => SavedCars(Car)"><i class="bi bi-bookmark"></i></button>
+
+        </div>
     </div>
-    </div>                         
 </section>
 
 @code {
 
     [Parameter] public CarGetDTO Car { get; set; }
-    [CascadingParameter(Name = "Service")] public UIService? Service { get; set; }
+    //[CascadingParameter(Name = "Service")] public UIService? Service { get; set; }
+    //[CascadingParameter(Name = "Service")] public UIService? UICartService { get; set; }
+
+    protected override void OnInitialized()
+    {
+        
+    }
+
     [Parameter] public EventCallback OnChange { get; set; }
 
     void OnColorClick(ColorGetDTO color)
@@ -50,7 +57,7 @@
 
     async Task SavedCars(CarGetDTO car)
     {
-       
+
         var cartItem = mapper.Map<CartItemDTO>(car);
         cartItem.Color = car.Colors!.FirstOrDefault(c => c.IsSelected);
         Service!.CartItems.Add(cartItem);
@@ -58,7 +65,7 @@
 
         if (OnChange.HasDelegate)
             await OnChange.InvokeAsync();
-        
+
         // await Storage.SetAsync("MyKey", car);
         // await Storage.RemoveAsync("MyKey");
         //var prod = await Storage.GetAsync <CarGetDTO>("MyKey");

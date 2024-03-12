@@ -30,7 +30,7 @@ void ConfigureAutoMapper()
 {
     var config = new MapperConfiguration(cfg =>
     {
-        //cfg.CreateMap<VehicleTypeGetDTO, CartItemDTO>().ReverseMap();
+        cfg.CreateMap<CartItemDTO, CarGetDTO>().ReverseMap();
     });
     var mapper = config.CreateMapper();
     builder.Services.AddSingleton(mapper);

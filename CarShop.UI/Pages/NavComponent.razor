@@ -18,7 +18,7 @@
                             Modeller
                         </a>
                         <ul class="dropdown-menu onclick">
-                             @foreach (var vt in Service!.Categories)
+                                @foreach (var vt in UICartService!.Categories)
                                 {
                                 <li ><a @onclick = "()=>OnClick(vt.Id)">@vt.Name</a></li>
                                 }
@@ -94,21 +94,21 @@
 
 
 @code {
-    [Parameter] public UIService? UICartService { get; set; }
-    [CascadingParameter(Name = "Service")] public UIService? Service { get; set; }
+    //[Parameter] public UIService? UICartService { get; set; }
+    [CascadingParameter(Name = "Service")] public UIService? UICartService { get; set; }
     [Parameter] public EventCallback<int> OnChange { get; set; }
 
     protected override async Task OnParametersSetAsync()
     {
         UICartService!.CartItems = await UICartService!.ReadStorage<List<CartItemDTO>>("CartItems") ?? [];
-        await Service.GetCategories();     
+        await UICartService.GetCategories();
     }
 
     
 
     void OnClick(int id)
     {
-        if (OnChange.HasDelegate && Service is not null)
+        if (OnChange.HasDelegate && UICartService is not null)
             OnChange.InvokeAsync(id);
     }
 

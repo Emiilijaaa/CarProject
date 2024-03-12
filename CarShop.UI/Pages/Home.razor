@@ -1,18 +1,17 @@
 ﻿@page "/"
 @inject UIService Service
 
-<NavComponent UIService="Service" />
+@* <NavComponent UIService="Service" /> *@
 <CascadingValue Value="Service" Name="Service">
     <NavComponent OnChange="OnCategoryChange" />
-</CascadingValue>
 <MenuComponent />
 <img src="Images/VV.png" />
 <CarouselComponent />
 <CardListComponent />
 
-<CascadingValue Value="Service" Name="Service">
+
+</CascadingValue>
         <ProductComponent OnChange="OnChange" />
-     </CascadingValue>
 
 <div id="viewport" class="d-flex vh-100 flex-wrap">
     @* <ProductFilterComponent /> *@
@@ -22,16 +21,26 @@
     }
     
 </div>
-
 <FooterComponent/>
+
 @code {
     //List<CarGetDTO> FetchedCars = new List<CarGetDTO>();
+
+    protected override void OnInitialized()
+    {
+        
+    }
+
 
     async Task OnCategoryChange(int id)
     {
         await Service.GetCarsByCategory(id);
        
         StateHasChanged();
+    }
+     void OnChange()
+    {
+
     }
 }
 
