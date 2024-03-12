@@ -89,7 +89,7 @@
         </div>
     </div>
 </nav>
-<CartComponent CartItems="UICartService.CartItems" />
+<CartComponent CartItems="UICartService.CartItems" OnChange="OnItemRemoved" />
 
 
 
@@ -104,7 +104,12 @@
         await UICartService.GetCategories();
     }
 
-    
+    async Task OnItemRemoved()
+    {
+        if (OnChange.HasDelegate)
+            OnChange.InvokeAsync();
+
+    }
 
     void OnClick(int id)
     {

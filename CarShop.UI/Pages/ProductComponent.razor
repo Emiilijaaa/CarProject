@@ -4,17 +4,19 @@
     @inject IMapper mapper
     @inject UIService Service
 
+
+    
 <section class="d-flex mx-3 mx-auto mt-5 ">
     <div class="card" style="width: 30rem;">
-        <img src="@Car.PictureURL" class="img-fluid start" alt="...">
+        @* <img  src="@Car.PictureURL" class="img-fluid rounded-start" alt="...">*@
         <h5 class="card-title">@Car.Brand.Name</h5>
         <p class="card-text">@Car.Description</p>
         <a href="#" class="btn btn-dark mt-5">Köp nu</a>
         <div class="">
-            <div class="d-flex card-footer bg-white g-0 justify-content-bewtween">
+              <div class="d-flex card-footer bg-white g-0 justify-content-bewtween">
             </div>
 
-            @if (Car.Colors!.Count > 0)
+             @if (Car.Colors!.Count > 0)
             {
 
                 @foreach (var color in Car.Colors)
@@ -27,8 +29,8 @@
                                for="color-@Car.Id-@color.Id"><i class="bi-check"></i></label>
 
                     </div>
-                }
-            }
+                } 
+            } 
             <button class="btn btn-sm btn-dark" @onclick="() => SavedCars(Car)"><i class="bi bi-bookmark"></i></button>
 
         </div>
