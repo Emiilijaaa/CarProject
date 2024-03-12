@@ -1,13 +1,13 @@
 ﻿<div class="d-flex">
 
-    <img src="images/BlåKiaFam.jpg" />
+    <img src="@CartItem!.PictureURL" />
     <div class="d-flex flex-column ms-3">
     <div class="d-flex flex-column">
             <h3>"CartItem!.Name"</h3>
             <p>CartItem!.Description</p>
         <table class="table mb-0">
          <tbody>
-                <tr><td> <div class="ms-2 badge text-bg-light style="background-color:@CartItem.Color.BGColor; color:">B</div></td></tr>
+                    <tr><td> <div class="ms-2 badge text-bg-light style="background-color:@CartItem.Color.BGColor; color:@CartItem.Color.TextColor">B</div></td></tr>
          </tbody>
         </table>
     
@@ -22,6 +22,14 @@
 
 
 @code {
-    [Parameter] public CartItemComponent? CartItem { get; set; }
+    [Parameter] public CartItemDTO? CartItem { get; set; }
+
+
+    void RemoveItem()
+    {
+        //Koppls till knspp
+        //Ts bort bilrn från favortier som finns i LocalStorage
+    }
+
 
 }
